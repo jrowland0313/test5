@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Carolina Gamecocks Baseball</title>
+    <style>
+        /* Reset CSS */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #212529;
+            color: #fff;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #6B2026;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        nav {
+            background-color: #343A40;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            margin-bottom: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        /* Standings Section */
+        .standings-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .standings {
+            flex-basis: 48%;
+            background-color: #343A40;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .standings h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .standings p {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Individual Statistics Section */
+        .statistics {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .player-card {
+            flex-basis: 48%;
+            background-color: #343A40;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .player-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .player-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .player-card p {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Schedule Section */
+        .schedule {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .game-card {
+            flex-basis: 48%;
+            background-color: #343A40;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .game-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .game-card p {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Roster Section */
+        .roster {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .player-card {
+            flex-basis: 48%;
+            background-color: #343A40;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .player-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .player-card p {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        /* Form Section */
+        .form-section {
+            background-color: #343A40;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .form-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .form-section form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .form-section label {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .form-section input[type="text"],
+        .form-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .form-section input[type="submit"] {
+            width: 50%;
+            padding: 10px;
+            background-color: #6B2026;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-section input[type="submit"]:hover {
+            background-color: #8e2d33;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>South Carolina Gamecocks Baseball</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#articles">Articles</a></li>
+            <li><a href="#standings">Standings</a></li>
+            <li><a href="#statistics">Statistics</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+            <li><a href="#roster">Roster</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Articles Section -->
+        <section id="articles" class="section">
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+            </div>
+            <div class="article-list">
+                <article>
+                    <h3>Baseball Ranked in Top 25</h3>
+                    <p>The South Carolina Gamecocks baseball team has been ranked in the top 25 for the current season.</p>
+                </article>
+                <article>
+                    <h3>Petry, Messina Named All-Americans</h3>
+                    <p>Ethan Petry and Cole Messina have been honored as All-American players for their outstanding performance.</p>
+                </article>
+                <article>
+                    <h3>How Far Will 2024 Gamecocks Go?</h3>
+                    <p>Speculations and predictions about the performance of the South Carolina Gamecocks baseball team in the ongoing season.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Standings Section -->
+        <section id="standings" class="section">
+            <div class="section-header">
+                <h2>Current Standings</h2>
+            </div>
+            <div class="standings-section">
+                <div class="standings">
+                    <h3>SEC</h3>
+                    <p>1. South Carolina 16-5</p>
+                    <p>2. LSU 15-6</p>
+                    <p>3. Arkansas 15-7</p>
+                    <p>4. Tennessee 14-8</p>
+                    <p>5. Alabama 14-9</p>
+                    <p>6. Florida 14-8</p>
+                    <p>7. Vanderbilt 13-9</p>
+                </div>
+                <div class="standings">
+                    <h3>Overall</h3>
+                    <p>1. South Carolina 25-10</p>
+                    <p>2. LSU 24-11</p>
+                    <p>3. Arkansas 22-14</p>
+                    <p>4. Tennessee 22-15</p>
+                    <p>5. Alabama 24-11</p>
+                    <p>6. Florida 25-9</p>
+                    <p>7. Vanderbilt 25-9</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Individual Statistics Section -->
+        <section id="statistics" class="section">
+            <div class="section-header">
+                <h2>Individual Statistics</h2>
+            </div>
+            <div class="statistics">
+                <div class="player-card">
+                    <img src="https://gamecocksonline.com/imgproxy/KMRTA48mAIGVGpfffjSHtqQJH8EgMaAMjBv4Rd5gWFA/fit/564/832/ce/0/aHR0cHM6Ly9zdG9yYWdlLmdvb2dsZWFwaXMuY29tL2dhbWVjb2Nrc29ubGluZS1jb20vMjAyMi8xMi8zNzk1OTIyMS1icmV3ZXItZHlsYW4uanBn.png"
+                        alt="Dylan Brewer">
+                    <h3>Dylan Brewer</h3>
+                    <p>Outfielder</p>
+                    <p>Batting Average: .320</p>
+                    <p>Home Runs: 10</p>
+                    <p>RBI: 45</p>
+                </div>
+                <div class="player-card">
+                    <img src="https://snworksceo.imgix.net/dth/ddb054f3-5c49-43d6-80b8-59507cd94dc9.sized-1000x1000.jpg?w=1000"
+                        alt="Tyler Causey">
+                    <h3>Tyler Causey</h3>
+                    <p>Infielder</p>
+                    <p>Batting Average: .305</p>
+                    <p>Home Runs: 8</p>
+                    <p>RBI: 37</p>
+                </div>
+                <div class="player-card">
+                    <img src="https://www.thestate.com/latest-news/q1end3/picture276909853/alternates/LANDSCAPE_1140/USATSI_20583496.jpg"
+                        alt="Parker Noland">
+                    <h3>Parker Noland</h3>
+                    <p>Infielder</p>
+                    <p>Batting Average: .310</p>
+                    <p>Home Runs: 6</p>
+                    <p>RBI: 42</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="section">
+            <div class="section-header">
+                <h2>Upcoming Schedule</h2>
+            </div>
+            <div class="schedule">
+                <!-- Schedule details will be added dynamically using JavaScript -->
+            </div>
+        </section>
+
+        <!-- Roster Section -->
+        <section id="roster" class="section">
+            <div class="section-header">
+                <h2>Team Roster</h2>
+            </div>
+            <div class="roster">
+                <!-- Roster details will be added dynamically using JavaScript -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="form-section">
+                <h2>Contact Us</h2>
+                <form action="#" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 South Carolina Gamecocks Baseball</p>
+    </footer>
+
+    <script>
+        // Example data for Schedule
+        const scheduleData = [
+            { opponent: 'Florida', date: 'April 30, 2024', location: 'Home' },
+            { opponent: 'Arkansas', date: 'May 5, 2024', location: 'Away' },
+            { opponent: 'Alabama', date: 'May 10, 2024', location: 'Home' },
+        ];
+
+        // Example data for Roster
+        const rosterData = [
+            { name: 'Eli Jones', position: 'Pitcher', number: 25 },
+            { name: 'Cole Messina', position: 'Catcher', number: 12 },
+            { name: 'Talmadge LeCroy', position: 'Infielder', number: 8 },
+        ];
+
+        // Function to populate Schedule section
+        function populateSchedule() {
+            const scheduleContainer = document.querySelector('.schedule');
+            scheduleData.forEach(game => {
+                const gameCard = document.createElement('div');
+                gameCard.classList.add('game-card');
+                gameCard.innerHTML = `
+                    <h3>${game.opponent}</h3>
+                    <p>Date: ${game.date}</p>
+                    <p>Location: ${game.location}</p>
+                `;
+                scheduleContainer.appendChild(gameCard);
+            });
+        }
+
+        // Function to populate Roster section
+        function populateRoster() {
+            const rosterContainer = document.querySelector('.roster');
+            rosterData.forEach(player => {
+                const playerCard = document.createElement('div');
+                playerCard.classList.add('player-card');
+                playerCard.innerHTML = `
+                    <h3>${player.name}</h3>
+                    <p>Position: ${player.position}</p>
+                    <p>Number: ${player.number}</p>
+                `;
+                rosterContainer.appendChild(playerCard);
+            });
+        }
+
+        // Call functions to populate Schedule and Roster sections
+        populateSchedule();
+        populateRoster();
+    </script>
+</body>
+
+</html>
